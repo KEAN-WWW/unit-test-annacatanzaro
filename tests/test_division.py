@@ -1,7 +1,13 @@
+"""Testing division function from calculator"""
 import pytest
-def test_division():
-    pass
+from app.calculator import Calculator
 
-def test_divide_zero_exception():
+def test_division():
+    """Divides two numbers"""
+    result = Calculator.division(4, 1)
+    assert result == 4, "Returns value"
+
+def test_divided_by_zero():
+    """Divides by zero"""
     with pytest.raises(ZeroDivisionError):
-        pass
+        Calculator.division(2, 0)
